@@ -1,7 +1,7 @@
 class Cat < ActiveRecord::Base
-  belongs_to :human
+  belongs_to :human, inverse_of: :cats
 
-  has_one(:house, through: :human, source: :house)
+  has_one(:house, through: :human)
 
   has_many(
     :siblings,
